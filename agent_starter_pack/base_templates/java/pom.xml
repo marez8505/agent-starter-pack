@@ -45,6 +45,11 @@
     <asp.cicd_runner>{{cookiecutter.cicd_runner}}</asp.cicd_runner>
 {%- if cookiecutter.agent_guidance_filename != "GEMINI.md" %}
     <asp.agent_guidance_filename>{{cookiecutter.agent_guidance_filename}}</asp.agent_guidance_filename>
+    <org-apache-tomcat-embed.tomcat-embed-core.version>10.1.55</org-apache-tomcat-embed.tomcat-embed-core.version>
+    <org-apache-tomcat.tomcat-coyote.version>10.1.55</org-apache-tomcat.tomcat-coyote.version>
+    <org-apache-tomcat.tomcat-catalina.version>10.1.55</org-apache-tomcat.tomcat-catalina.version>
+    <org-apache-tomcat.tomcat-util.version>10.1.55</org-apache-tomcat.tomcat-util.version>
+    <org-apache-tomcat-embed.tomcat-embed-websocket.version>10.1.55</org-apache-tomcat-embed.tomcat-embed-websocket.version>
 {%- endif %}
   </properties>
 
@@ -171,4 +176,33 @@
       </plugin>
     </plugins>
   </build>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.apache.tomcat.embed</groupId>
+        <artifactId>tomcat-embed-core</artifactId>
+        <version>${org-apache-tomcat-embed.tomcat-embed-core.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.tomcat</groupId>
+        <artifactId>tomcat-coyote</artifactId>
+        <version>${org-apache-tomcat.tomcat-coyote.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.tomcat</groupId>
+        <artifactId>tomcat-catalina</artifactId>
+        <version>${org-apache-tomcat.tomcat-catalina.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.tomcat</groupId>
+        <artifactId>tomcat-util</artifactId>
+        <version>${org-apache-tomcat.tomcat-util.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.tomcat.embed</groupId>
+        <artifactId>tomcat-embed-websocket</artifactId>
+        <version>${org-apache-tomcat-embed.tomcat-embed-websocket.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 </project>
